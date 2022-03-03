@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="frags :: head"></head>
+<body>
+<h1><a th:href="@{/list}">Return to Danny's Bookstore</a></h1>
+
+<div class="form">
+    <img th:src="@{/img/sm/__${book.imageFileName}__}" th:alt="${book.title}">
+    <br/>
+    <h3 th:text="|Buy ${book.title}|">BUY</h3>
+    <br/>
+
+    <form th:action="@{/update}" method="post" th:object="${book}">
+        <input type="hidden" th:field="*{id}">
+
+        <label for="sell">How many do you want to buy? Limited to 10</label>
+        <br/>
+        <input type="number" id="sell" th:field="*{sell}" min="1" max="10">
+
+        <br/>
+
+        <input type="submit" value="Buy!">
+    </form>
+</div>
+</body>
+</html>

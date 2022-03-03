@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="frags :: head"></head>
+<body>
+<header th:replace="frags :: logo"></header>
+
+<div class="content">
+<div th:each="bk : ${bookList}" class="squirrel-entry">
+    <h3 th:text="${bk.title}">Title</h3>
+    <p class="species" th:text="'Price: $' + ${bk.price}">Price</p>
+    <p class="habitat" th:text="'Units in Stock: ' + ${bk.inventory}">Inventory</p>
+    <img th:src="@{/img/sm/__${bk.imageFileName}__}" th:alt="${bk.title}">
+    <br/>
+    <button th:onclick="|document.location='@{/ranking(id=${bk.id})}'|">Buy!</button>
+</div>
+</div>
+
+</body>
+</html>

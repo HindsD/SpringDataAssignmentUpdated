@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">TITLE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<header th:fragment="logo">
+    <a th:href="@{/}">
+        <h1>Danny's Bookstore</h1>
+    </a>
+    <h2>Shop for a book!</h2>
+</header>
+
+
+</body>
+</html>
